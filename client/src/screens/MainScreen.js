@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getPeople } from '../services/PeopleServices'
 
 const Header = (props) =>  {
+
+    const [ data, setData ] = useState();
 
     const getPeopleAsync = async () => {
         return await getPeople();
     }
 
-    useEffect(() => {
-        //Runs on every render
-        getPeopleAsync();
-    });
-
     return(
         <div>
-            <h1>Hello there.</h1>
+            <h1>{data}</h1>
+            <button onClick={async () => {
+                const newData = await getPeopleAsync();
+                console.log(newData);
+                setData(newData);
+            }}>Click me</button>
         </div>
     )
 }

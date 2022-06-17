@@ -1,13 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
-import mysqlConnection from "./connection.js"
+import cors from 'cors';
 
-import PeopleRoutes from "./routes/people.js"
+import routes from "./routes/routes.js"
 
 var app = express();
+
+app.use(cors())
 app.use(bodyParser.json());
 
-app.use("/people", PeopleRoutes);
+app.use("/api", routes);
 
 
 app.listen(3000);
