@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import  Header  from './screens/MainScreen'
+import  MainScreen  from './screens/MainScreen'
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <MainScreen/>
     </div>
   );
 }

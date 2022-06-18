@@ -3,7 +3,7 @@ import mysql from "mysql";
 var mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    database: "test1",
+    database: "menteebase",
     multipleStatements: true
 });
 
